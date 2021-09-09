@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.repository.EventRepository;
@@ -17,6 +18,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     OrganizerRepository organizerRepository;
 
     @Override
+    @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
