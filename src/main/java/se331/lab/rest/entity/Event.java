@@ -2,10 +2,7 @@ package se331.lab.rest.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.entity.Participant;
@@ -27,6 +24,8 @@ public class Event {
     String date;
     String time;
     Boolean petAllowed;
+    @ManyToOne
     Organizer organizer;
+    @ManyToMany(mappedBy = "eventHistory")
     List<Participant> participants;
 }
