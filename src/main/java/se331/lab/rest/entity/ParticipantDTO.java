@@ -17,5 +17,5 @@ public class ParticipantDTO {
     Long id;
     String name;
     String telNo;
-    List<ParticipantJoinEventDTO> participantJoinEvents = new ArrayList<>();
+    List<ParticipantJoinEventDTO> eventHistory = new ArrayList<>();
 }
